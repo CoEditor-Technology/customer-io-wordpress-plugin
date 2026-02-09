@@ -27,8 +27,9 @@ class TrackingScripts {
 	 */
 	public function inject_main_tracking_script() {
 		$api_key = get_option( 'customerio_api_key', '' );
+		$selected_site = get_option( 'customerio_selected_site', '' );
 
-		if ( empty( $api_key ) ) {
+		if ( empty( $api_key ) || empty( $selected_site ) ) {
 			return;
 		}
 

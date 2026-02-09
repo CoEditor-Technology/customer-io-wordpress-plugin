@@ -12,6 +12,26 @@
 	do_settings_sections( 'customerio_settings_group' );
 	?>
 	<table class="form-table" role="presentation">
+
+
+		<tr>
+			<th scope="row">
+				<label for="customerio_selected_site">Selected site</label>
+			</th>
+			<td>
+				<select>
+					<option value=""><?php echo esc_html( 'Select a site', 'customerio' ); ?></option>
+					<?php
+					$sites = \CustomerIO\Settings::get_customerio_sites();
+					foreach ( $sites as $site ) {
+						$selected = ( get_option( 'customerio_selected_site' ) === $site['id'] ) ? 'selected' : '';
+						echo '<option value="' . esc_attr( $site['id'] ) . '" ' . $selected . '>' . esc_html( $site['name'] ) . '</option>';
+					}
+					?>
+				</select>
+			</td>
+		</tr>
+
 		<tr>
 			<th scope="row">
 				<label for="customerio_api_key">Customer.io API key</label>

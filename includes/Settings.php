@@ -20,6 +20,19 @@ class Settings {
 		add_action( 'admin_init', [ $this, 'customerio_register_settings' ] );
 	}
 
+	/**
+	 * Get the various sites to configure the customer.io plugin for
+	 *
+	 * @return void
+	 */
+	public static function get_customerio_sites() {
+		return [
+			[ 'id' => 'spectator_com', 'name' => 'Spectator.com' ],
+			[ 'id' => 'spectator_aus', 'name' => 'Spectator Australia' ],
+			[ 'id' => 'unherd', 'name' => 'UnHerd' ],
+			[ 'id' => 'apollo', 'name' => 'Apollo' ],
+		];
+	}
 
 	/**
 	 * Registers custom WordPress settings used in the plugin
@@ -30,5 +43,6 @@ class Settings {
 		register_setting( 'customerio_settings_group', 'customerio_api_key' );
 		register_setting( 'customerio_settings_group', 'customerio_site_id' );
 		register_setting( 'customerio_settings_group', 'customerio_track_api_key' );
+		register_setting( 'customerio_settings_group', 'customerio_selected_site' );
 	}
 }
