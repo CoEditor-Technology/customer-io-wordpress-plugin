@@ -1,0 +1,10 @@
+{
+  "name": "coeditor/customerio-plugin",
+  "type": "wordpress-plugin",
+  "description": "A WordPress plugin to track user activity and send it to Customer.io for better marketing automation.",
+  "autoload": {
+    "psr-4": {
+      "CustomerIO\\": "includes/"
+    }
+  }
+}
