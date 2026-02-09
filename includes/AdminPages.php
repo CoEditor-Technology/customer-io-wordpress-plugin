@@ -45,11 +45,6 @@ class AdminPages {
 				'title'    => 'General settings',
 				'template' => CUSTOMER_IO_PLUGIN_PAGES . 'general-settings.php',
 			],
-			[
-				'slug'     => 'webhooks',
-				'title'    => 'Webhook URLs',
-				'template' => CUSTOMER_IO_PLUGIN_PAGES . 'webhooks.php',
-			]
 		];
 	}
 
